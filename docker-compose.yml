@@ -1,15 +1,15 @@
 version: '3'
-services:
-  app:
-    container_name: docker-node-mongo
-    restart: always
-    build: .
-    ports:
-      - '80:3000'
-    links:
-      - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
-    ports:
-      - '27017:27017'
+services: 
+    app: 
+        container_name: docker-node-mongo
+        restart: always
+        build: .
+        ports: 
+            - '80:3000' #local machene : contailer
+        links:
+            - mongo
+    mongo: 
+        container_name: mongo
+        image: mongo #跟上面node-mongo不一樣是因為 上面已經有建好docker file，這邊是要上dockerHub去pull
+        ports: 
+            - '27017:27017' #docker hub
